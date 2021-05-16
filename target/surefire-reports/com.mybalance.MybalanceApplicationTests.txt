@@ -1,0 +1,10 @@
+-------------------------------------------------------------------------------
+Test set: com.mybalance.MybalanceApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 6, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 4.082 s <<< FAILURE! - in com.mybalance.MybalanceApplicationTests
+testUpdate  Time elapsed: 0.011 s  <<< ERROR!
+org.springframework.dao.IncorrectResultSizeDataAccessException: query did not return a unique result: 2; nested exception is javax.persistence.NonUniqueResultException: query did not return a unique result: 2
+	at com.mybalance.MybalanceApplicationTests.testUpdate(MybalanceApplicationTests.java:48)
+Caused by: javax.persistence.NonUniqueResultException: query did not return a unique result: 2
+	at com.mybalance.MybalanceApplicationTests.testUpdate(MybalanceApplicationTests.java:48)
+

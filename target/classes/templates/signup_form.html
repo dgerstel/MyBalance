@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta name="Bilans energetyczny"
+	content="Dziennik żywieniowy; dziennik aktywności; obliczenia bilansu energetycznego" />
+<title>Registration</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+</head>
+<body>
+	<div th:class="container">
+		<aside class="header">
+			<a href="/" class="logo" title="Home"><i
+				class="fas fa-calculator"></i> MyBalance</a>
+		</aside>
+		<main class="content">
+			<h1>Zarejestruj się</h1>
+			<hr>
+			<article>
+				<form action="#" method="post" th:action="@{/register}"
+					th:object="${user}" class="form">
+					<h3 class="under-line">Dane podstawowe</h3>
+					<p th:errors="*{userName}">Name errors</p>
+					<input th:field="*{userName}" placeholder="Nazwa użytkownika" /><br />
+					<p th:errors="*{email}">Email errors</p>
+					<input th:field="*{email}" type="email" placeholder="Email" /><br />
+					<p th:errors="*{password}">Password errors</p>
+					<input th:field="*{password}" type="password" placeholder="Hasło" /><br />
+					<h3 class="under-line">Dane niezbędne do ustalena wydatku
+						energetycznego</h3>
+					<p th:errors="*{age}">Age errors</p>
+					<input type="number" th:field="*{age}" placeholder="Wiek" /><br />
+					<p th:errors="*{height}">Height errors</p>
+					<input type="number" th:field="*{height}" placeholder="Wzrost" /><br />
+					<p th:errors="*{weight}">Weight errors</p>
+					<input type="number" th:field="*{weight}" placeholder="Waga" /><br />
+					<h3 class="under-line">Wybierz płeć</h3>
+					<p th:errors="*{gender}">Gender errors</p>
+					<label class="label"><input type="radio"
+						th:field="*{gender}" value="MALE" id="male" />Mężczyzna</label><br /> <label
+						class="label"><input type="radio" th:field="*{gender}"
+						value="FEMALE" id="female" />Kobieta</label><br />
+					<p th:errors="*{jobActivityLevel}">errors</p>
+					<h3 class="under-line">Wybierz rodzaj wykonywanej pracy
+						uwzględniający poziom jej aktywności*</h3>
+					<select th:field="*{jobActivityLevel}" id="actLevel" class="select">
+						<option th:value="1.1"
+							th:text="'(1,1) Bardzo niska aktywność, brak pracy'"></option>
+						<option th:value="1.2"
+							th:text="'(1,2) Bardzo niska aktywność, praca siedząca'"></option>
+						<option th:value="1.25" th:text="'(1,25)'"></option>
+						<option th:value="1.35"
+							th:text="'(1,35) Niska aktywność, praca siedząca, dodatkowe czynności, spacery'"></option>
+						<option th:value="1.4" th:text="'(1,4)'"></option>
+						<option th:value="1.45" th:text="'(1,45)'"></option>
+						<option th:value="1.5" th:text="'(1,5)'"></option>
+						<option selected th:value="1.55"
+							th:text="'(1,55) Umiarkowana aktywność, lekka praca fizyczna lub praca siedząca i wiele zajęć dodatkowych'"></option>
+						<option th:value="1.6" th:text="'(1,6)'"></option>
+						<option th:value="1.65"
+							th:text="'(1,65) Praca fizyczna wymagająca wysokiej aktywności (mieszana)'"></option>
+						<option th:value="1.7" th:text="'(1,7)'"></option>
+						<option th:value="1.75" th:text="'(1,75)'"></option>
+
+						<option th:value="1.8"
+							th:text="'(1,8) Praca fizyczna, wymagająca dużej aktywności, w dużej mierze stojąca lub w ruchu'"></option>
+						<option th:value="1.85" th:text="'(1,85)'"></option>
+						<option th:value="1.9"
+							th:text="'(1,9) Aktywna praca fizyczna oraz wiele zajęć dodatkowych lub nadgodzin'"></option>
+						<option th:value="2.0" th:text="'(2.0) Ciężka praca fizyczna'"></option>
+						<option th:value="2.2"
+							th:text="'(2.2) Bardzo ciężka praca fizyczna'"></option>
+					</select> <input type="submit" value="Rejestracja" class="my-button" />
+				</form>
+				<p>
+					*Współczynnik aktywności fizycznej (wartość podana w nawiasie).
+					Wybierając go warto się chwilę zastanowić i w razie potrzeby
+					posłużyć się podanymi źródłami w zakładce<a th:href="@{/info}">
+						INFORMACJE.</a> Należy pamiętać, aby tej wartości nie zawyżać i na
+					potrzeby tej aplikacji wziąć pod uwagę tylko aktywność związaną z
+					wykonywaną pracą zawodową (ewentualnie, plus czynności, które nie
+					będą rejestrowane przez aplikację) ponieważ aplikacja ma za zadanie
+					monitorować aktywności użytkownka, które będą "naliczane" ponad
+					wybrany wskaźnik.
+				</p>
+			</article>
+			<h2>
+				Jeżeli masz już konto <a th:href="@{/login_form}">ZALOGUJ SIĘ</a>
+			</h2>
+		</main>
+		<footer>MyBalance ® 2021</footer>
+	</div>
+</body>
+</html>
