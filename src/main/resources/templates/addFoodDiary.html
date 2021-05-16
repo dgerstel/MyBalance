@@ -98,7 +98,7 @@
 						<td class="td3" th:text="*{kcalories}"></td>
 						<td class="td1" th:text="*{description}"></td>
 						<td class="td4"><button type="submit" id="add" th:name="id"
-								th:value="*{id}" class="delete-button" title="Dodaj">
+								th:value="*{id}" class="small-button" title="Dodaj">
 								<i class="fas fa-folder-plus"></i>
 							</button></td>
 					</tr>
@@ -110,7 +110,7 @@
 				<form th:action="@{/diary/addFoodDiary}" method="post">
 					<select name="category" class="select">
 						<option th:each="item: ${allCatList}" th:text="*{item.name}"></option>
-					</select> <input type="submit" value="zmień" class="login-button" />
+					</select> <input type="submit" value="zmień" class="my-button" />
 				</form>
 			</div>
 		</main>
