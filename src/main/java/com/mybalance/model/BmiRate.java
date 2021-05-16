@@ -1,0 +1,5 @@
+package com.mybalance.model;
+
+enum BmiRate {
+	WYGŁODZENIE, WYCHUDZENIE, NIEDOWAGA, PRAWIDŁOWE, NADWAGA, I_ST_OTYŁOŚCI, II_ST_OTYŁOŚCI, OTYŁOŚĆ_SKRAJNA
+}

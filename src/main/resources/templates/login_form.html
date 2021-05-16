@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="utf-8" />
+<meta name="Bilans energetyczny"
+	content="Dziennik żywieniowy; dziennik aktywności; obliczenia bilansu energetycznego" />
+<title>Login</title>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+<link
+	href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap"
+	rel="stylesheet">
+<link rel="stylesheet" type="text/css" th:href="@{/style.css}">
+</head>
+</head>
+<body>
+	<div th:class="container">
+		<aside class="header">
+			<a href="/" class="logo" title="Home"><i
+				class="fas fa-calculator"></i> MyBalance</a>
+		</aside>
+		<div class="main">
+			<main class="content">
+					<h2>Zaloguj się</h2>
+				<hr>
+					<form action="processlogin" th:action="@{/processlogin}"
+						method="post" class="form">
+						<div th:if="${param.error}">
+							<p>Nieprawidłowe dane logowania!</p>
+						</div>
+						<input name="user" placeholder="Nazwa użytkownika" required /> <br />
+						<input type="password" name="pass" placeholder="Hasło" required />
+						<br /> <input type="submit" value="Zaloguj" class="my-button" />
+					</form>
+				<hr>
+				<h2>
+					Jeżeli nie masz konta <a th:href="@{/register}">ZAREJESTRUJ SIĘ</a>
+				</h2>
+			</main>
+		</div>
+		<footer>MyBalance ® 2021</footer>
+	</div>
+</body>
+</html>
+
+
+
